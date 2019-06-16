@@ -56,7 +56,7 @@ Things you may want to cover:
 - belongs_to : group
 - belongs_to : user
 
-##group_user テーブル
+## group_user テーブル
 Column|Type|Options|
 |------|----|-------|
 |group|references ||
