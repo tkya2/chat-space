@@ -55,3 +55,13 @@ Things you may want to cover:
 ### Association
 - belongs_to : group
 - belongs_to : user
+
+##group_user テーブル
+Column|Type|Options|
+|------|----|-------|
+|group|references ||
+|user|references ||
+
+### Association
+- belongs_to :group
+- belongs_to :user
