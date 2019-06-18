@@ -61,6 +61,7 @@ Column|Type|Options|
 |group|references ||
 |user|references ||
 
+
 ### Association
 - belongs_to :group
 - belongs_to :user
