@@ -23,8 +23,6 @@ Things you may want to cover:
 
 * ...
 
-ko
-
 ## User テーブル
 |Column|Type|Options|
 |------|----|-------|
