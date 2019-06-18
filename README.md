@@ -30,6 +30,7 @@ Things you may want to cover:
 |name|string|null: false, index:true|
 |email|string|null: false, index:true|
 
+
 ### Association
 - has many : messeage
 - has many : group 
