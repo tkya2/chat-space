@@ -23,13 +23,13 @@ Things you may want to cover:
 
 * ...
 
+ko
 
 ## User テーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, index:true|
 |email|string|null: false, index:true|
-
 
 ### Association
 - has many : messeage
