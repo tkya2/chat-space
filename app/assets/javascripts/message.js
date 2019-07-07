@@ -40,9 +40,9 @@ $('#new_message').on('submit', function(e) {
     processData: false,
     contentType: false,
   })
-  .done(function(data) {
-    console.log(data)
-    var html = buildHTML(data);
+  .done(function(messages) {
+    console.log(messages)
+    var html = buildHTML(messages);
     $('.messages').append(html);
     ScrollToNewMessage();
     $('.form__message').val('');
