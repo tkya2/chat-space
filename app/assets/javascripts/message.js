@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message){
+    image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
     var html = `<div class= "message">
     <div class="upper-message">
       <div class="upper-message__user-name">
@@ -13,10 +14,15 @@ $(function(){
       <p class="lower-message__content">
       ${message.content}
       </p>
-      ${message.image}
+      ${image}
     </div>
   </div> `
     return html;
+  }
+
+
+  function ScrollToNewMessage(){
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fasts');
   }
 
 $('#new_message').on('submit', function(e) {
@@ -38,7 +44,11 @@ $('#new_message').on('submit', function(e) {
     console.log(data)
     var html = buildHTML(data);
     $('.messages').append(html);
-    $('.message_content').val('');
+    ScrollToNewMessage();
+    $('.form__message').val('');
+    $('.form__submit').attr('disabled', false);
+    $('.hidden').val('');
+
   })
   .fail(function() {
     alert('error');
