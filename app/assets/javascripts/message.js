@@ -42,13 +42,12 @@ $('#new_message').on('submit', function(e) {
     contentType: false,
   })
   .done(function(messages) {
-    console.log(messages)
     var html = buildHTML(messages);
     $('.messages').append(html);
     ScrollToNewMessage();
-    $('.form__message').val('');
+    $('#new_message')[0].reset();
     $('.form__submit').attr('disabled', false);
-    $('.hidden').val('');
+
 
   })
   .fail(function() {
