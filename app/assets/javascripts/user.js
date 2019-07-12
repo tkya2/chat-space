@@ -1,16 +1,14 @@
 $(function() {
 
   var search_list = $("#user-search-result");
-  var member_list = $("#user-menber-result");
+  var member_list = $("#user-member-result");
  
   function appendUserToSearchList(user) {
     var html =
-      `<div class="chat-group-form__field--right clearfix">
-        <div class="chat-group-user clearfix">
-            <p class="chat-group-user__name">${user.name}</p>
-            <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name=${ user.name }>追加</a>
-        </div>
-      </div>`
+      `<div class="chat-group-user clearfix">
+          <p class="chat-group-user__name">${user.name}</p>
+          <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id="${ user.id }" data-user-name=${ user.name }>追加</a>
+        </div>`
     search_list.append(html);
     return html;
    }
@@ -64,6 +62,8 @@ $(function() {
       $(document).on('click', '.user-search-add', function() {
         var name = $(this).attr("data-user-name");
         var user_id = $(this).attr("data-user-id");
+        console.log(name)
+        console.log(user_id)
         $(this).parent().remove();
         appendUserToMemberList(name, user_id);
       });
