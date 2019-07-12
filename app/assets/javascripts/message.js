@@ -37,8 +37,6 @@ $('#new_message').on('submit', function(e) {
 // ③ Mapオブジェクト:Viewから取得したformのデータは、Mapオブジェクトになっている。
 // 「キーと値のペアのコレクション」とのことらしい。配列の中にkeyと値のペアがいくつか入ったオブジェクト、と言うふうにとりあえずようわからん。
   var url = $(this).attr('action');
-  console.log(url)
-  console.log(formData)
   $.ajax({
     type: 'POST',
     url: url,
