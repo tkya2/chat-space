@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-    image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
+    image =  message.image ? `<img class= "lower-message__image" src=${message.image} >` : "";
       var html = 
   `<div class= "message" data-message-id=${message.id}>
     <div class="upper-message">
@@ -20,6 +20,7 @@ $(function(){
   </div> `
     return html;
   }
+  
 
 
   function ScrollToNewMessage(){
@@ -69,8 +70,13 @@ $(function(){
       dataType: 'json',
       data: {id: last_message_id}
     })
+    
     .done(function(messages) {
-      console.log(messages);
+      messages.forEach(function( message ){
+        var html = message ? buildHTML(message) : ``;
+        $('.messages').append(html)
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 500)
+      });
     })
     .fail(function() {
       console.log('error');
