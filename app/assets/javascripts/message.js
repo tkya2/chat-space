@@ -55,6 +55,8 @@ $(function(){
   });
 
   var reloadMessages = function() {
+
+    if (location.href .match(/message/)){
     var last_message_id = $(".message:last").data("message-id")
 
     $.ajax({
@@ -74,6 +76,7 @@ $(function(){
     .fail(function() {
       alert('error');
     });
+  };
   };
   setInterval(reloadMessages, 5000);  
 });
