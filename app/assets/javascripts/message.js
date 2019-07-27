@@ -45,12 +45,12 @@ $(function(){
       $('.messages').append(html);
       ScrollToNewMessage();
       $('#new_message')[0].reset();
-      $('.form__submit').attr('disabled', false);
-
-
     })
     .fail(function() {
       alert('error');
+    })
+    .always(function(){
+      $('.form__submit').attr('disabled', false);
     });
   });
 
