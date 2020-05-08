@@ -6,7 +6,7 @@ $(function(){
     <div class="upper-message">
       <div class="upper-message__user-name">
             ${message.name}
-      </div>
+      </div>ø
     <div class="upper-message__date">
       ${message.created_at}
     </div>
@@ -80,6 +80,4 @@ $(function(){
   };
   setInterval(reloadMessages, 5000);  
 });
-
-
 
